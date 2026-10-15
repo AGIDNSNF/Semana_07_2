@@ -1,0 +1,173 @@
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --card: #f5f5f5;
+  --border: #ddd;
+  --accent: #646cff;
+}
+
+body.dark {
+  --bg: #1a1a1a;
+  --text: #f5f5f5;
+  --card: #2a2a2a;
+  --border: #444;
+  --accent: #747bff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.dashboard {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.dashboard header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.dashboard header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.dashboard header button {
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.task-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.task-form button {
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.controls {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--card);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.controls label {
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.controls select {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.task-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: opacity 0.2s;
+}
+
+.task-list li.completed span {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.task-list li span {
+  flex: 1;
+}
+
+.task-list li input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.task-list li button {
+  padding: 0.4rem 0.8rem;
+  background: transparent;
+  color: #ef4444;
+  border: 1px solid #ef4444;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.task-list li button:hover {
+  background: #ef4444;
+  color: white;
+}
+
+.hidden-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  width: 0;
+}
+
+.empty {
+  text-align: center;
+  opacity: 0.6;
+  padding: 2rem;
+  background: var(--card);
+  border-radius: 8px;
+  border: 1px dashed var(--border);
+}
